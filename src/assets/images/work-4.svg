@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6f7fb" />
+      <stop offset="100%" stop-color="#e6eaf3" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" fill="url(#g4)" />
+  <rect x="60" y="70" width="520" height="280" rx="24" fill="#ffffff" stroke="#e2e6ee" />
+  <text x="90" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#0d0f14">Factory Profile</text>
+  <rect x="90" y="200" width="180" height="60" rx="12" fill="#0b0b0f" opacity="0.12" />
+  <rect x="290" y="200" width="180" height="60" rx="12" fill="#0b0b0f" opacity="0.08" />
+</svg>

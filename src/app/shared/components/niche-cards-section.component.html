@@ -1,0 +1,14 @@
+<section class="section" revealOnScroll="fade-up" [staggerSelector]="'.niche-card'">
+  <div class="container">
+    <div class="section-head">
+      <h2>Designed for the businesses we know best</h2>
+      <p>Focused layouts that match how local buyers browse, compare, and order.</p>
+    </div>
+    <div class="niche-grid">
+      <article class="niche-card" *ngFor="let niche of niches">
+        <h3>{{ niche.title }}</h3>
+        <p>{{ niche.desc }}</p>
+      </article>
+    </div>
+  </div>
+</section>

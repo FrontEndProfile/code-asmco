@@ -1,0 +1,40 @@
+<section class="section" revealOnScroll="fade-up" [staggerSelector]="'.work-card'">
+  <div class="container">
+    <div class="section-head">
+      <h2>Featured work</h2>
+      <p>Lightweight builds for real customer journeys.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card" *ngFor="let work of works" (click)="open(work)">
+        <img
+          [src]="work.image"
+          [srcset]="work.srcset"
+          sizes="(max-width: 900px) 100vw, 50vw"
+          [alt]="work.alt"
+          width="640"
+          height="420"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="work-info">
+          <h3>{{ work.title }}</h3>
+          <p>{{ work.category }}</p>
+          <span>{{ work.result }}</span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="work-modal" *ngIf="selectedWork">
+    <div class="work-modal-content">
+      <button class="modal-close" type="button" (click)="close()">×</button>
+      <h3>{{ selectedWork.title }}</h3>
+      <p>{{ selectedWork.category }}</p>
+      <p class="result">Result: {{ selectedWork.result }}</p>
+      <p>
+        We delivered a lightweight layout, WhatsApp ordering, and a clear product
+        structure tailored to their audience.
+      </p>
+    </div>
+  </div>
+</section>

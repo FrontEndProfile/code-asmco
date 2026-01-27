@@ -1,0 +1,266 @@
+<section #heroSection class="hero" revealOnScroll="fade-up">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">{{ content.hero.eyebrow }}</span>
+      <h1>{{ content.hero.headline }}</h1>
+      <p>{{ content.hero.subheadline }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" routerLink="/contact">{{ content.hero.ctas.primary }}</a>
+        <a class="btn btn-secondary" [href]="whatsappLink" target="_blank" rel="noopener">{{ content.hero.ctas.whatsapp }}</a>
+        <a class="link" routerLink="/packages">{{ content.hero.ctas.secondary }}</a>
+      </div>
+      <div class="micro-trust">{{ content.hero.microTrust }}</div>
+    </div>
+    <div class="hero-visual" revealOnScroll="fade-left">
+      <div class="hero-frame">
+        <div class="hero-frame-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="hero-collage">
+          <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80" alt="Perfume bottle on a table" width="240" height="200" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Luxury watch on display" width="240" height="200" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80" alt="Eyewear product close-up" width="240" height="200" loading="lazy" decoding="async" />
+          <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Manufacturing facility workspace" width="240" height="200" loading="lazy" decoding="async" />
+        </div>
+      </div>
+      <div #heroShapes class="hero-shapes" aria-hidden="true">
+        <span class="shape shape-one"></span>
+        <span class="shape shape-two"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip" revealOnScroll="stagger-children">
+  <div class="container trust-wrap">
+    <div class="section-head trust-head">
+      <span class="section-eyebrow">{{ content.trustStrip.eyebrow }}</span>
+      <h2>{{ content.trustStrip.title }}</h2>
+      <p>{{ content.trustStrip.summary }}</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item" *ngFor="let item of content.trustStrip.items">
+        {{ item.label }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="design-first" revealOnScroll="stagger-children">
+  <div class="container design-grid">
+    <div>
+      <span class="section-eyebrow">{{ content.designFirst.eyebrow }}</span>
+      <h2>{{ content.designFirst.title }}</h2>
+      <p>{{ content.designFirst.description }}</p>
+    </div>
+    <div class="design-steps">
+      <div class="design-step" *ngFor="let step of content.designFirst.steps">
+        {{ step }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="stagger-children">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.niches.eyebrow }}</span>
+      <h2>{{ content.niches.title }}</h2>
+      <p>{{ content.niches.summary }}</p>
+    </div>
+    <div class="grid-cards">
+      <article class="card card-link" *ngFor="let niche of content.niches.items">
+        <a
+          class="card-inner"
+          routerLink="/contact"
+          [attr.aria-label]="niche.title + ' inquiry'"
+        >
+          <img [src]="niche.image" [srcset]="niche.srcset" sizes="(max-width: 900px) 100vw, 33vw" [alt]="niche.title" width="320" height="180" loading="lazy" decoding="async" />
+          <h3>{{ niche.title }}</h3>
+          <p>{{ niche.description }}</p>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="stagger-children">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.valueProps.eyebrow }}</span>
+      <h2>{{ content.valueProps.title }}</h2>
+      <p>{{ content.valueProps.summary }}</p>
+    </div>
+    <div class="grid-cards">
+      <article class="card" *ngFor="let prop of content.valueProps.items; let i = index">
+        <span class="cap-index" aria-hidden="true">{{ i + 1 | number: '2.0' }}</span>
+        <h3>{{ prop.title }}</h3>
+        <p>{{ prop.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="stagger-children">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.packages.eyebrow }}</span>
+      <h2>{{ content.packages.title }}</h2>
+      <p>{{ content.packages.summary }}</p>
+    </div>
+    <div class="packages-grid">
+      <article class="package" *ngFor="let pack of content.packages.items" [class.highlight]="pack.highlight">
+        <div class="package-header">
+          <div>
+            <h3>{{ pack.name }}</h3>
+            <span class="package-price">{{ pack.price }}</span>
+          </div>
+          <span class="badge" *ngIf="pack.highlight">Most Popular</span>
+        </div>
+        <p class="package-tagline">{{ pack.tagline }}</p>
+        <p class="package-summary">{{ pack.summary }}</p>
+        <ul>
+          <li *ngFor="let item of pack.items">{{ item }}</li>
+        </ul>
+        <p class="package-best">{{ pack.bestFor }}</p>
+        <a class="btn btn-primary" routerLink="/contact">Get a Free Quote</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="stagger-children">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.work.eyebrow }}</span>
+      <h2>{{ content.work.title }}</h2>
+      <p>{{ content.work.summary }}</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card" *ngFor="let work of content.work.items">
+        <img [src]="work.image" [srcset]="work.srcset" sizes="(max-width: 900px) 100vw, 50vw" [alt]="work.title" width="520" height="320" loading="lazy" decoding="async" />
+        <div class="work-info">
+          <h3>{{ work.title }}</h3>
+          <span>{{ work.result }}</span>
+          <a class="link" routerLink="/work">{{ work.link }}</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="stagger-children">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.process.eyebrow }}</span>
+      <h2>{{ content.process.title }}</h2>
+      <p>{{ content.process.summary }}</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step" *ngFor="let step of content.process.steps; let i = index">
+        <div class="timeline-index">{{ i + 1 }}</div>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="fade-up">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.testimonials.eyebrow }}</span>
+      <h2>{{ content.testimonials.title }}</h2>
+      <p>{{ content.testimonials.summary }}</p>
+    </div>
+    <div class="testimonial-card" aria-live="polite">
+      <p class="quote">“{{ content.testimonials.items[activeTestimonialIndex].quote }}”</p>
+      <div class="author">
+        <strong>{{ content.testimonials.items[activeTestimonialIndex].name }}</strong>
+        <span>{{ content.testimonials.items[activeTestimonialIndex].role }} · {{ content.testimonials.items[activeTestimonialIndex].company }}</span>
+      </div>
+      <div class="carousel-controls">
+        <button class="btn btn-secondary" type="button" aria-label="Previous testimonial" (click)="prevTestimonial()">Prev</button>
+        <button class="btn btn-secondary" type="button" aria-label="Next testimonial" (click)="nextTestimonial()">Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" revealOnScroll="stagger-children">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">{{ content.faq.eyebrow }}</span>
+      <h2>{{ content.faq.title }}</h2>
+      <p>{{ content.faq.summary }}</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of content.faq.items; let i = index">
+        <button
+          type="button"
+          class="faq-question"
+          (click)="toggleFaq(i)"
+          [attr.aria-expanded]="openFaqIndex === i"
+          [attr.aria-controls]="'faq-panel-' + i"
+        >
+          {{ faq.question }}
+          <span class="faq-icon">+</span>
+        </button>
+        <div
+          class="faq-answer"
+          [id]="'faq-panel-' + i"
+          role="region"
+          [attr.aria-hidden]="openFaqIndex !== i"
+          [class.open]="openFaqIndex === i"
+        >
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-cta" revealOnScroll="fade-up">
+  <div class="container contact-grid">
+    <div>
+      <span class="section-eyebrow">Contact</span>
+      <h2>{{ content.contactCta.title }}</h2>
+      <p>{{ content.contactCta.description }}</p>
+      <div class="contact-meta">
+        <span>{{ content.contactCta.phone }}</span>
+        <span>{{ content.contactCta.emails[0] }}</span>
+        <span>{{ content.contactCta.emails[1] }}</span>
+        <span>{{ content.contactCta.availability }}</span>
+      </div>
+      <div class="contact-note">We reply within 24 hours.</div>
+    </div>
+    <form class="contact-form" aria-label="Contact form" (submit)="$event.preventDefault()">
+      <label>
+        Name
+        <input type="text" name="name" placeholder="Your name" />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" placeholder="you@email.com" />
+      </label>
+      <label>
+        Brand type
+        <input type="text" name="brand" placeholder="Retail, beauty, manufacturing..." />
+      </label>
+      <label>
+        Budget
+        <input type="text" name="budget" placeholder="$200–$700" />
+      </label>
+      <label class="full">
+        Message
+        <textarea name="message" rows="4" placeholder="Tell us about your project"></textarea>
+      </label>
+      <div class="form-actions">
+        <button class="btn btn-primary" type="submit">Get a Free Quote</button>
+        <a class="btn btn-secondary" [href]="whatsappLink" target="_blank" rel="noopener">WhatsApp Now</a>
+      </div>
+    </form>
+  </div>
+</section>

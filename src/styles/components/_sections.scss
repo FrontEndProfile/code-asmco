@@ -1,0 +1,19 @@
+.section {
+  padding: 56px 0;
+}
+
+.section-head {
+  display: grid;
+  gap: 8px;
+  max-width: 620px;
+}
+
+.section-head p {
+  color: var(--color-muted);
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 88px 0;
+  }
+}

@@ -1,0 +1,31 @@
+<section class="section" revealOnScroll="fade-up" [staggerSelector]="'.faq-item'">
+  <div class="container">
+    <div class="section-head">
+      <h2>Frequently asked questions</h2>
+      <p>Everything you need to know before starting.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <button
+          type="button"
+          class="faq-question"
+          (click)="toggle(i)"
+          [attr.aria-expanded]="openIndex === i"
+          [attr.aria-controls]="'faq-panel-' + i"
+          >
+          {{ faq.q }}
+          <span class="icon">+</span>
+        </button>
+        <div
+          class="faq-answer"
+          [id]="'faq-panel-' + i"
+          role="region"
+          [attr.aria-hidden]="openIndex !== i"
+          [class.open]="openIndex === i"
+        >
+          <p>{{ faq.a }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

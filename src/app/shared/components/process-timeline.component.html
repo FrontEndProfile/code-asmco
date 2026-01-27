@@ -1,0 +1,17 @@
+<section class="section" revealOnScroll="fade-up" [staggerSelector]="'.timeline-step'">
+  <div class="container">
+    <div class="section-head">
+      <h2>A simple, reliable process</h2>
+      <p>We keep the workflow light and fast so you can sell sooner.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step" *ngFor="let step of steps; let i = index">
+        <div class="timeline-index">{{ i + 1 }}</div>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
