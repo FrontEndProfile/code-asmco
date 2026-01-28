@@ -1,0 +1,251 @@
+:host {
+  display: block;
+}
+
+/* floating capsule header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 14px 0;
+  background: transparent;
+}
+
+.header-shell {
+  position: relative;
+}
+
+/* capsule */
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+  padding: 14px 18px;
+
+  border-radius: 999px;
+  background: rgba(245, 245, 245, 0.92);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Brand */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 999px;
+}
+
+.brand:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 2px;
+}
+
+.brand-logo {
+  display: block;
+  height: 34px;
+  width: auto;
+  max-width: 170px;
+}
+
+/* Desktop nav */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+
+  color: rgba(20, 20, 20, 0.72);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+
+  padding: 6px 8px;
+  border-radius: 999px;
+
+  transition: color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.nav-link:hover {
+  color: rgba(20, 20, 20, 0.92);
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* • Home style (active dot like screenshot) */
+.nav-link.is-active {
+  color: rgba(20, 20, 20, 0.92);
+}
+
+.nav-link.is-active::before {
+  content: "•";
+  display: inline-block;
+  margin-right: 6px;
+  color: rgba(20, 20, 20, 0.9);
+}
+
+/* Right side actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* CTA pill (black) */
+.cta-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 42px;
+  padding: 0 16px;
+
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cta-pill:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.cta-pill:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 3px;
+}
+
+/* Hamburger (only mobile) */
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 3px;
+}
+
+.menu-toggle .line {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.92);
+}
+
+/* animate hamburger to X when open */
+.site-header.is-open .menu-toggle .line:nth-child(1) {
+  transform: translateY(4.5px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.site-header.is-open .menu-toggle .line:nth-child(2) {
+  transform: translateY(-4.5px) rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+
+/* Mobile drawer */
+.mobile-drawer {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  padding: 14px 0;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 18px;
+}
+
+.drawer-link {
+  text-decoration: none;
+  color: rgba(20, 20, 20, 0.85);
+  font-weight: 600;
+  font-size: 0.98rem;
+
+  padding: 12px 12px;
+  border-radius: 16px;
+
+  transition: background 0.2s ease;
+}
+
+.drawer-link:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.drawer-link.is-active::before {
+  content: "•";
+  display: inline-block;
+  margin-right: 8px;
+  color: rgba(20, 20, 20, 0.9);
+}
+
+.drawer-links .cta-pill {
+  margin-top: 6px;
+  width: fit-content;
+}
+
+/* Responsive */
+@media (max-width: 959px) {
+  .header-actions .cta-pill {
+    display: none; // CTA goes into drawer like screenshot style
+  }
+}
+
+@media (min-width: 960px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .mobile-drawer {
+    display: none;
+  }
+}

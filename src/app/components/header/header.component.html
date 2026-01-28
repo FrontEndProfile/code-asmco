@@ -1,0 +1,53 @@
+<header class="site-header" [class.is-open]="isMenuOpen">
+  <div class="header-shell">
+    <div class="header-bar container">
+      <!-- Brand -->
+      <a class="brand" href="#home" data-scroll (click)="closeMenu()">
+        <img
+          class="brand-logo"
+          src="https://asmco.company/assets/images/asmco-Logo.svg"
+          alt="ASMCO Tech logo"
+          width="140"
+          height="40"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link is-active" href="#home" data-scroll>Home</a>
+        <a class="nav-link" href="#work" data-scroll>Work</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <a class="cta-pill" href="#contact" data-scroll>Get a Free Audit</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          [attr.aria-expanded]="isMenuOpen"
+          aria-controls="mobile-menu"
+          (click)="toggleMenu()"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" *ngIf="isMenuOpen">
+      <nav class="drawer-links" id="mobile-menu" aria-label="Mobile">
+        <a class="drawer-link is-active" href="#home" data-scroll (click)="closeMenu()">Home</a>
+        <a class="drawer-link" href="#work" data-scroll (click)="closeMenu()">Work</a>
+
+        <a class="cta-pill" href="#contact" data-scroll (click)="closeMenu()">
+          Get a Free Audit
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,55 @@
+<section class="t" id="testimonials" aria-label="Testimonials">
+  <div class="container">
+    <div class="t-card">
+      <div class="chip">TESTIMONIALS</div>
+
+      <div class="content">
+        <p class="quote" [attr.aria-live]="'polite'">
+          <span class="qmark">“</span>{{ testimonials[index].quote }}<span class="qmark">”</span>
+        </p>
+
+        <p class="by">
+          -{{ testimonials[index].author }}, {{ testimonials[index].role }}, {{ testimonials[index].company }}
+        </p>
+
+        <!-- arrows -->
+        <button
+          class="arrow left"
+          type="button"
+          (click)="prev()"
+          [disabled]="isFirst"
+          [class.is-hidden]="isFirst"
+          aria-label="Previous testimonial"
+        >
+          ‹
+        </button>
+
+        <button
+          class="arrow right"
+          type="button"
+          (click)="next()"
+          [disabled]="isLast"
+          [class.is-hidden]="isLast"
+          aria-label="Next testimonial"
+        >
+          ›
+        </button>
+      </div>
+
+      <div class="bottom">
+        <div class="avatar">
+          <img
+            [src]="testimonials[index].avatar"
+            [alt]="testimonials[index].author"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="count">
+          {{ index + 1 }}/{{ testimonials.length }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

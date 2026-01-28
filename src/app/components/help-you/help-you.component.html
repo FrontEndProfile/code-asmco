@@ -1,0 +1,46 @@
+<section class="help" id="services" aria-label="How I can help you">
+  <div class="container">
+    <div class="help-card">
+      <div class="help-grid">
+        <!-- LEFT -->
+        <div class="copy">
+          <h2 class="heading">
+            How I <em>can help you</em><span class="dots">...</span>
+          </h2>
+
+          <div class="list" role="list">
+            <button
+              *ngFor="let item of items; let i = index"
+              type="button"
+              class="row"
+              [class.is-active]="i === activeIndex"
+              (mouseenter)="setActive(i)"
+              (focus)="setActive(i)"
+              (click)="setActive(i)"
+            >
+              <div class="row-main">
+                <div class="row-title">{{ item.title }}</div>
+                <div class="row-sub">{{ item.subtitle }}</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="media" aria-label="Service preview image">
+          <div class="media-frame">
+            <img
+              *ngFor="let item of items; let i = index"
+              class="media-img"
+              [class.is-active]="i === activeIndex"
+              [src]="item.image"
+              [alt]="item.title"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<section class="ww" aria-label="Who we love to work with">
+  <div class="container">
+    <div class="ww-card">
+      <div class="chip">WHO WE LOVE TO WORK WITH</div>
+
+      <div class="cloud" (mouseleave)="setActive(null)">
+        <ng-container *ngFor="let item of items; let i = index">
+          <!-- dots (red) -->
+          <span *ngIf="item.isDot" class="dot" aria-hidden="true">•</span>
+
+          <!-- words -->
+          <button
+            *ngIf="!item.isDot"
+            type="button"
+            class="tag"
+            [class.is-active]="activeIndex === i"
+            [class.is-dim]="activeIndex !== null && activeIndex !== i"
+            (mouseenter)="setActive(i)"
+            (focus)="setActive(i)"
+            (blur)="setActive(null)"
+          >
+            {{ item.text }}
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

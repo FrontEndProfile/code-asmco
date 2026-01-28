@@ -1,0 +1,129 @@
+.why {
+  padding: 22px 0 28px;
+}
+
+.why-card {
+  border-radius: 26px;
+  background: rgba(245, 245, 245, 0.92);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+  padding: 56px 56px 60px;
+}
+
+.why-head {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.chip {
+  width: fit-content;
+  margin: 0 auto 18px;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(20, 20, 20, 0.16);
+  color: rgba(20, 20, 20, 0.78);
+
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.05;
+
+  font-size: clamp(2.2rem, 3.6vw, 4rem);
+  letter-spacing: -0.02em;
+  color: rgba(20, 20, 20, 0.92);
+
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(20, 20, 20, 0.14);
+  border-radius: 18px;
+
+  padding: 26px 22px 24px;
+  text-align: center;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+}
+
+.icon-wrap {
+  height: 110px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+
+.icon {
+  max-width: 150px;
+  max-height: 110px;
+  width: auto;
+  height: auto;
+  opacity: 0.95;
+}
+
+.item-title {
+  margin: 0 0 8px;
+  font-size: 1.28rem;
+  font-weight: 600;
+  color: rgba(20, 20, 20, 0.9);
+}
+
+.item-desc {
+  margin: 0 auto;
+  max-width: 280px;
+
+  color: rgba(20, 20, 20, 0.62);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .why-card {
+    padding: 46px 34px 50px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .why-card {
+    padding: 28px 18px 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-desc {
+    max-width: 340px;
+  }
+}
