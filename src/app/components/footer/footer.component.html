@@ -1,1 +1,33 @@
-<p>footer works!</p>
+<footer class="footer" aria-label="Footer">
+  <div class="container">
+    <div class="footer-card">
+      <div class="grid">
+        <!-- Left -->
+        <div class="left">
+          <h2 class="title">
+            Ready to bring your <span class="italic">ideas to life?</span>
+          </h2>
+
+          <a class="cta light" href="#contact" data-scroll>Book a Free Call</a>
+        </div>
+
+        <!-- Right -->
+        <div class="right" aria-label="Footer links">
+          <div class="col">
+            <div class="col-title">Work</div>
+            <a class="link" *ngFor="let l of workLinks" [href]="l.href">{{ l.label }}</a>
+          </div>
+
+          <div class="col">
+            <div class="col-title">Connect</div>
+            <a class="link" *ngFor="let l of connectLinks" [href]="l.href">{{ l.label }}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="credit">SITE DESIGN AND DEVELOPMENT BY JULES STUDIO.</div>
+      </div>
+    </div>
+  </div>
+</footer>

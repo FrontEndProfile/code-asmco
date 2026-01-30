@@ -1,1 +1,31 @@
-<p>meet-the-founder works!</p>
+<section class="mf" id="founder" aria-label="Meet the founder">
+  <div class="container">
+    <div class="mf-card">
+      <!-- LEFT (dark) -->
+      <div class="mf-left">
+        <div class="chip">MEET THE FOUNDER</div>
+
+        <h2 class="title">
+          Inspired by creation, dedicated to
+          harnessing the power of design.
+        </h2>
+
+        <p class="body">
+          I'm {{ name }}, creator and Head of Design at Jules Studio. If you ask me what I am
+          passionate about and driven by, it's the thrill of creation. I am constantly striving
+          to create a product that will help a business succeed, and a design that I'm proud to deliver.
+          I'm convinced that design and visuals can have an impact on our world. That's why I created
+          Jules Studio, to attract work that provides the thrill of creation, while also utilizing the
+          power of excellent design. I enjoy helping organizations thrive.
+        </p>
+      </div>
+
+      <!-- RIGHT (image) -->
+      <div class="mf-right">
+        <div class="img-frame">
+          <img [src]="imageUrl" alt="Meet the founder" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

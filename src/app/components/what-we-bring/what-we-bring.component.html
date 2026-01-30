@@ -1,1 +1,51 @@
-<p>what-we-bring works!</p>
+<section class="wb" id="skills" aria-label="Skills and Services">
+  <div class="container">
+    <div class="wb-card">
+      <div class="wb-grid">
+        <!-- LEFT IMAGE -->
+        <div class="media">
+          <div class="media-frame">
+            <img
+              [src]="imageUrl"
+              alt="Skills & services"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="content">
+          <div class="chip">SKILLS &amp; SERVICES</div>
+
+          <h2 class="title">
+            What we bring to the table<span class="dots">...</span>
+          </h2>
+
+          <div class="sections">
+            <!-- BLOCK 1 -->
+            <div class="row">
+              <h3 class="row-title">{{ blocks[0].title }}</h3>
+
+              <ul class="bullets">
+                <li *ngFor="let it of blocks[0].items">{{ it }}</li>
+              </ul>
+            </div>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <!-- BLOCK 2 -->
+            <div class="row">
+              <h3 class="row-title">{{ blocks[1].title }}</h3>
+
+              <ul class="bullets">
+                <li *ngFor="let it of blocks[1].items">{{ it }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /content -->
+      </div>
+    </div>
+  </div>
+</section>

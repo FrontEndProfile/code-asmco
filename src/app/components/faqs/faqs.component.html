@@ -1,1 +1,40 @@
-<p>faqs works!</p>
+<section class="faq" id="faq" aria-label="FAQs">
+  <div class="container">
+    <div class="faq-card">
+      <h2 class="faq-title">FAQs</h2>
+
+      <div class="faq-list" role="list">
+        <div class="faq-item" *ngFor="let item of faqs; let i = index; trackBy: trackByIndex" role="listitem">
+          <button
+            class="faq-q"
+            type="button"
+            (click)="toggle(i)"
+            [attr.aria-expanded]="openIndex === i"
+            [attr.aria-controls]="'faq-panel-' + i"
+          >
+            <span class="q-text">{{ item.q }}</span>
+
+            <span class="icon" [class.is-open]="openIndex === i" aria-hidden="true">
+              <span class="bar h"></span>
+              <span class="bar v"></span>
+            </span>
+          </button>
+
+          <div
+            class="faq-a"
+            [class.is-open]="openIndex === i"
+            [id]="'faq-panel-' + i"
+            role="region"
+            [attr.aria-label]="item.q"
+          >
+            <div class="faq-a-inner">
+              <p>{{ item.a }}</p>
+            </div>
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

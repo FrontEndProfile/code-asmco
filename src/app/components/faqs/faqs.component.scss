@@ -1,0 +1,148 @@
+.faq {
+  padding: 22px 0 30px;
+}
+
+/* card same vibe */
+.faq-card {
+  border-radius: 26px;
+  background: rgba(245, 245, 245, 0.92);
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+  padding: 54px 64px;
+}
+
+.faq-title {
+  margin: 0 0 36px;
+  text-align: center;
+  font-family: inherit;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgba(20, 20, 20, 0.92);
+
+  font-size: clamp(3rem, 5vw, 5.2rem);
+  line-height: 0.95;
+}
+
+.faq-list {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  display: block;
+}
+
+/* question row */
+.faq-q {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+
+  padding: 20px 0;
+
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  text-align: left;
+  font-size: 1.2rem;
+  color: rgba(20, 20, 20, 0.85);
+
+  transition: opacity 0.2s ease;
+}
+
+.faq-q:hover {
+  opacity: 0.92;
+}
+
+.q-text {
+  line-height: 1.25;
+}
+
+/* plus icon -> rotate to cross */
+.icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+
+  transition: transform 0.22s ease;
+}
+
+.icon.is-open {
+  transform: rotate(45deg); /* plus becomes X */
+}
+
+.bar {
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 999px;
+}
+
+.bar.v {
+  transform: rotate(90deg);
+}
+
+/* answer smooth open/close (no height: auto issues) */
+.faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease, opacity 0.28s ease;
+  opacity: 0;
+}
+
+.faq-a.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-a-inner {
+  overflow: hidden;
+  padding: 0 0 16px;
+}
+
+.faq-a-inner p {
+  margin: 0;
+  max-width: 78ch;
+
+  color: rgba(20, 20, 20, 0.62);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+/* divider */
+.divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.18);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .faq-card {
+    padding: 36px 22px;
+  }
+
+  .faq-q {
+    padding: 18px 0;
+    font-size: 1.06rem;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-a,
+  .icon {
+    transition: none !important;
+  }
+}

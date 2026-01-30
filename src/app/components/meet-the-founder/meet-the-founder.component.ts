@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-meet-the-founder',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './meet-the-founder.component.html',
-  styleUrl: './meet-the-founder.component.scss'
+  styleUrl: './meet-the-founder.component.scss',
 })
 export class MeetTheFounderComponent {
+  // replace with your relative image
+  imageUrl = 'assets/founder/founder.jpg';
 
+  name = 'Fazal';
 }

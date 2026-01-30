@@ -1,1 +1,22 @@
-<p>free-design-audit works!</p>
+<section class="audit" id="contact" aria-label="Free design audit">
+  <div class="container">
+    <div class="audit-card">
+      <p class="kicker">Not sure where to start?</p>
+
+      <h2 class="title">
+        Start with a <span class="italic">free</span> design audit
+      </h2>
+
+      <div class="pill" aria-hidden="true">WHAT YOU RECEIVE</div>
+
+      <div class="grid" role="list">
+        <div class="box" *ngFor="let c of cards" role="listitem">
+          <div class="num">{{ c.num }}</div>
+          <p class="box-text">{{ c.text }}</p>
+        </div>
+      </div>
+
+      <a class="cta" href="#contact" data-scroll>Get Started</a>
+    </div>
+  </div>
+</section>

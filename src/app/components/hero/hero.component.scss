@@ -72,9 +72,8 @@
   font-size: clamp(2.7rem, 4.2vw, 4.9rem);
   letter-spacing: -0.02em;
   color: rgba(20, 20, 20, 0.92);
-
   /* serif feel (use your global font stacks) */
-  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-family: inherit;
   font-weight: 500;
 }
 
