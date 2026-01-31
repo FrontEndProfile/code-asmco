@@ -1,27 +1,30 @@
-<section class="ww" aria-label="Who we love to work with">
+<section class="work-tags">
   <div class="container">
-    <div class="ww-card">
-      <div class="chip">WHO WE LOVE TO WORK WITH</div>
+    <div class="card">
+      <!-- accessibility heading (hidden like your extension) -->
+      <h2 class="sr-only">Who We Serve</h2>
 
-      <div class="cloud" (mouseleave)="setActive(null)">
-        <ng-container *ngFor="let item of items; let i = index">
-          <!-- dots (red) -->
-          <span *ngIf="item.isDot" class="dot" aria-hidden="true">•</span>
+      <div class="content">
+        <div class="eyebrow-wrap">
+          <div class="eyebrow">
+            <span>Who we love to work with</span>
+          </div>
+        </div>
 
-          <!-- words -->
-          <button
-            *ngIf="!item.isDot"
-            type="button"
-            class="tag"
-            [class.is-active]="activeIndex === i"
-            [class.is-dim]="activeIndex !== null && activeIndex !== i"
-            (mouseenter)="setActive(i)"
-            (focus)="setActive(i)"
-            (blur)="setActive(null)"
-          >
-            {{ item.text }}
-          </button>
-        </ng-container>
+        <div class="tag-row" (mouseleave)="onLeave()">
+          <ng-container *ngFor="let t of tags; let i = index">
+            <h2
+              class="tag"
+              [class.dim]="isDim(i)"
+              (mouseenter)="onEnter(i)"
+            >
+              {{ t.label }}
+            </h2>
+
+            <!-- red dot between items (not after last) -->
+            <span class="dot" *ngIf="i < tags.length - 1"></span>
+          </ng-container>
+        </div>
       </div>
     </div>
   </div>

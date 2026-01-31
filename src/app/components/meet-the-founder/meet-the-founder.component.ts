@@ -9,8 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './meet-the-founder.component.scss',
 })
 export class MeetTheFounderComponent {
-  // replace with your relative image
-  imageUrl = 'assets/founder/founder.jpg';
 
-  name = 'Fazal';
 }

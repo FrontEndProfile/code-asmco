@@ -1,103 +1,142 @@
-.clients {
-  padding: 22px 0 30px;
+
+/* ====== Wrappers (same system as your sections) ====== */
+.cl-wrap {
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
-.clients-card {
-  border-radius: 26px;
-  background: rgba(245, 245, 245, 0.92);
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  padding: 44px 44px 36px;
+.cl-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.headline {
-  margin: 0 0 26px;
-  text-align: center;
-  font-size: clamp(1.05rem, 1.4vw, 1.3rem);
-  color: rgba(20, 20, 20, 0.72);
-  line-height: 1.5;
-}
-
-/* ===== MARQUEE ===== */
-.marquee {
+.cl-surface {
+  border-radius: 16px;
+  background: #f5f4f4;
   overflow: hidden;
-  position: relative;
 }
 
-/* gradient fade edges (like screenshot) */
-.marquee::before,
-.marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 90px;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
+.cl-inner {
+  padding: 80px 64px;
 }
 
-.marquee::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(245,245,245,1), rgba(245,245,245,0));
-}
-
-.marquee::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(245,245,245,1), rgba(245,245,245,0));
-}
-
-/* moving track */
-.track {
+/* ====== Heading ====== */
+.cl-head {
   display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.cl-title {
+  margin: 0 0 44px;
+  font-family: Geist, Arial, sans-serif; /* Jules heading uses Geist-ish */
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #2e2c25;
+  max-width: 1000px;
+}
+
+/* ====== Marquee ====== */
+.cl-marquee {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 140px; /* ensures logos area visible */
+
+  /* LEFT/RIGHT fade (correct) */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,1) 12%,
+    rgba(0,0,0,1) 88%,
+    rgba(0,0,0,0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,1) 12%,
+    rgba(0,0,0,1) 88%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+
+.cl-track {
+  display: flex;
+  align-items: center;
   width: max-content;
-  gap: 56px;
-
-  animation: scroll 35s linear infinite;
+  will-change: transform;
+  animation: cl-scroll 18s linear infinite;
 }
 
-/* individual logo */
-.logo {
-  height: 90px;
-  display: grid;
-  place-items: center;
+.cl-group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
-.logo img {
-  height: 52px;
-  width: auto;
-  max-width: 200px;
-
-  opacity: 0.45;
-  filter: grayscale(1);
-}
-
-/* infinite motion */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
+/* pause on hover (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .cl-marquee:hover .cl-track {
+    animation-play-state: paused;
   }
 }
 
-/* responsive */
-@media (max-width: 640px) {
-  .clients-card {
-    padding: 28px 18px 22px;
-  }
 
-  .track {
-    gap: 36px;
-    animation-duration: 26s; /* slightly faster on mobile */
-  }
+/* gap between logos same as screenshot */
+.cl-logo {
+  flex: 0 0 auto;
+  display: block;
+  object-fit: contain;
 
-  .logo {
-    height: 72px;
-  }
+  max-width: 225px;
+  max-height: 120px;
 
-  .logo img {
-    height: 44px;
+  margin-right: 56px;
+
+  /* Jules style: soft / faded */
+  opacity: 0.38;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+/* (Optional) slightly stronger on hover for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .cl-logo:hover {
+    opacity: 0.65;
+    filter: grayscale(40%);
+  }
+}
+
+/* Infinite loop: move one full group width */
+@keyframes cl-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cl-track { animation: none; }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 991px) {
+  .cl-wrap { padding: 0 16px; }
+  .cl-inner { padding: 48px 16px; }
+  .cl-title { margin-bottom: 28px; font-size: 18px; }
+
+  .cl-logo {
     max-width: 160px;
+    max-height: 84px;
+    margin-right: 32px;
+  }
+
+  .cl-track {
+    --duration: 16s; /* a bit faster on mobile */
   }
 }

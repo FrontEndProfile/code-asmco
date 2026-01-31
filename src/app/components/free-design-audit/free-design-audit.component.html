@@ -1,22 +1,62 @@
-<section class="audit" id="contact" aria-label="Free design audit">
-  <div class="container">
-    <div class="audit-card">
-      <p class="kicker">Not sure where to start?</p>
 
-      <h2 class="title">
-        Start with a <span class="italic">free</span> design audit
-      </h2>
+<section class="fda" id="contact">
+  <div class="fda__container">
+    <div class="fda__card">
+      <div class="fda__inner">
 
-      <div class="pill" aria-hidden="true">WHAT YOU RECEIVE</div>
+        <!-- Heading -->
+        <header class="fda__header">
+          <p class="fda__kicker">Not sure where to start?</p>
 
-      <div class="grid" role="list">
-        <div class="box" *ngFor="let c of cards" role="listitem">
-          <div class="num">{{ c.num }}</div>
-          <p class="box-text">{{ c.text }}</p>
+          <h2 class="fda__title">
+            Start with a <span class="fda__free">free</span> design audit
+          </h2>
+        </header>
+
+        <!-- What you receive -->
+        <div class="fda__body">
+          <div class="fda__eyebrow"><span>What you receive</span></div>
+
+          <div class="fda__grid">
+            <div class="fda__box">
+              <div class="fda__num">01</div>
+              <p class="fda__text">
+                Comprehensive and detailed analysis of your landing page or brand.
+              </p>
+            </div>
+
+            <div class="fda__box">
+              <div class="fda__num">02</div>
+              <p class="fda__text">
+                15-minute chat to discuss weaknesses and potential solutions.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <a class="cta" href="#contact" data-scroll>Get Started</a>
+        <!-- CTA -->
+<div class="fda__action">
+  <a class="fda__action-track" href="/free-design-audit">
+    <span class="fda__action-row">
+      <span class="fda__action-label">Get Started</span>
+
+      <svg class="fda__action-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M20 12L4 12M20 12C20 10.682 15 7 15 7M20 12C20 13.318 15 17 15 17"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </span>
+  </a>
+</div>
+
+
+
+
+      </div>
     </div>
   </div>
 </section>

@@ -1,32 +1,79 @@
-<footer class="footer" aria-label="Footer">
-  <div class="container">
-    <div class="footer-card">
-      <div class="grid">
-        <!-- Left -->
-        <div class="left">
-          <h2 class="title">
-            Ready to bring your <span class="italic">ideas to life?</span>
-          </h2>
+<footer class="ftr">
+  <div class="ftr__container">
+    <div class="ftr__card">
+      <div class="ftr__padY">
+        <div class="ftr__inner">
+          <div class="ftr__top">
+            <!-- Left: headline + action -->
+            <div class="ftr__lead">
+              <h2 class="ftr__title">
+                Ready to bring your <em class="ftr__em">ideas to life?</em>
+              </h2>
 
-          <a class="cta light" href="#contact" data-scroll>Book a Free Call</a>
-        </div>
+              <div class="ftr__action">
+                <a class="ftr__action-track" href="/booking" aria-label="Book a Free Call">
+                  <span class="ftr__action-row">
+                    <span class="ftr__action-label">Book a Free Call</span>
 
-        <!-- Right -->
-        <div class="right" aria-label="Footer links">
-          <div class="col">
-            <div class="col-title">Work</div>
-            <a class="link" *ngFor="let l of workLinks" [href]="l.href">{{ l.label }}</a>
+                    <span class="ftr__action-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M20 12L4 12M20 12C20 10.682 15 7 15 7M20 12C20 13.318 15 17 15 17"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: columns -->
+            <div class="ftr__cols">
+              <div class="ftr__col">
+                <div class="ftr__colTitle">Work</div>
+                <ul class="ftr__list" role="list">
+                  <li class="ftr__item"><a class="ftr__link" href="/work/adriano">Adriano</a></li>
+                  <li class="ftr__item"><a class="ftr__link" href="/work/horizon-interiors">Horizon Interiors</a></li>
+                </ul>
+              </div>
+
+              <div class="ftr__col">
+                <div class="ftr__colTitle">Connect</div>
+                <ul class="ftr__list" role="list">
+                  <li class="ftr__item">
+                    <a class="ftr__linkIcon" href="mailto:hello@julesstudio.co">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 16" fill="none" class="footer_link-logo"><path d="M2 16C1.45 16 0.979333 15.8043 0.588 15.413C0.196667 15.0217 0.000666667 14.5507 0 14V2C0 1.45 0.196 0.979333 0.588 0.588C0.98 0.196666 1.45067 0.000666667 2 0H18C18.55 0 19.021 0.196 19.413 0.588C19.805 0.98 20.0007 1.45067 20 2V14C20 14.55 19.8043 15.021 19.413 15.413C19.0217 15.805 18.5507 16.0007 18 16H2ZM18 4L10.525 8.675C10.4417 8.725 10.3543 8.76267 10.263 8.788C10.1717 8.81333 10.084 8.82567 10 8.825C9.916 8.82433 9.82867 8.812 9.738 8.788C9.64733 8.764 9.55967 8.72633 9.475 8.675L2 4V14H18V4ZM10 7L18 2H2L10 7ZM2 4.25V2.775V2.8V2.788V4.25Z" fill="currentColor"></path></svg>
+                      <span class="ftr__linkText">Email</span>
+                    </a>
+                  </li>
+
+                  <li class="ftr__item">
+                    <a class="ftr__linkIcon" href="https://www.linkedin.com/in/juliagmadsen/" target="_blank" rel="noopener">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="footer_link-logo"><path d="M18.5211 0.000139829H1.47887C1.2873 -0.00250476 1.09708 0.0323869 0.91908 0.102822C0.741077 0.173257 0.578776 0.277857 0.441446 0.410646C0.304116 0.543436 0.194448 0.701814 0.118704 0.876737C0.0429602 1.05166 0.00262414 1.2397 0 1.43012V18.5699C0.00262414 18.7603 0.0429602 18.9483 0.118704 19.1233C0.194448 19.2982 0.304116 19.4566 0.441446 19.5894C0.578776 19.7221 0.741077 19.8267 0.91908 19.8972C1.09708 19.9676 1.2873 20.0025 1.47887 19.9999H18.5211C18.7127 20.0025 18.9029 19.9676 19.0809 19.8972C19.2589 19.8267 19.4212 19.7221 19.5586 19.5894C19.6959 19.4566 19.8056 19.2982 19.8813 19.1233C19.957 18.9483 19.9974 18.7603 20 18.5699V1.43012C19.9974 1.2397 19.957 1.05166 19.8813 0.876737C19.8056 0.701814 19.6959 0.543436 19.5586 0.410646C19.4212 0.277857 19.2589 0.173257 19.0809 0.102822C18.9029 0.0323869 18.7127 -0.00250476 18.5211 0.000139829ZM6.0664 16.7399H3.04829V7.74003H6.0664V16.7399ZM4.55734 6.48005C4.14111 6.48005 3.74192 6.31569 3.4476 6.02314C3.15328 5.73059 2.98793 5.3338 2.98793 4.92007C2.98793 4.50634 3.15328 4.10955 3.4476 3.817C3.74192 3.52445 4.14111 3.36009 4.55734 3.36009C4.77837 3.33518 5.00219 3.35695 5.21416 3.42398C5.42613 3.491 5.62147 3.60178 5.78738 3.74905C5.95329 3.89632 6.08604 4.07676 6.17693 4.27856C6.26782 4.48036 6.31481 4.69897 6.31481 4.92007C6.31481 5.14117 6.26782 5.35978 6.17693 5.56158C6.08604 5.76338 5.95329 5.94382 5.78738 6.09109C5.62147 6.23836 5.42613 6.34914 5.21416 6.41617C5.00219 6.48319 4.77837 6.50496 4.55734 6.48005ZM16.9517 16.7399H13.9336V11.91C13.9336 10.7 13.501 9.91 12.4044 9.91C12.0651 9.91247 11.7346 10.0183 11.4576 10.2132C11.1806 10.4081 10.9703 10.6827 10.8551 11C10.7764 11.235 10.7423 11.4826 10.7545 11.73V16.7299H7.73642V7.73003H10.7545V9.00001C11.0287 8.52713 11.4275 8.13755 11.9079 7.87323C12.3883 7.60892 12.9322 7.47989 13.4809 7.50003C15.493 7.50003 16.9517 8.79002 16.9517 11.56V16.7399Z" fill="currentColor"></path></svg>
+                      <span class="ftr__linkText">Linkedin</span>
+                    </a>
+                  </li>
+
+                  <li class="ftr__item">
+                    <a class="ftr__linkIcon" href="https://www.instagram.com/julesstudio.co/" target="_blank" rel="noopener">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" class="footer_link-logo"><path d="M5.8 0H14.2C17.4 0 20 2.6 20 5.8V14.2C20 15.7383 19.3889 17.2135 18.3012 18.3012C17.2135 19.3889 15.7383 20 14.2 20H5.8C2.6 20 0 17.4 0 14.2V5.8C0 4.26174 0.61107 2.78649 1.69878 1.69878C2.78649 0.61107 4.26174 0 5.8 0ZM5.6 2C4.64522 2 3.72955 2.37928 3.05442 3.05442C2.37928 3.72955 2 4.64522 2 5.6V14.4C2 16.39 3.61 18 5.6 18H14.4C15.3548 18 16.2705 17.6207 16.9456 16.9456C17.6207 16.2705 18 15.3548 18 14.4V5.6C18 3.61 16.39 2 14.4 2H5.6ZM15.25 3.5C15.5815 3.5 15.8995 3.6317 16.1339 3.86612C16.3683 4.10054 16.5 4.41848 16.5 4.75C16.5 5.08152 16.3683 5.39946 16.1339 5.63388C15.8995 5.8683 15.5815 6 15.25 6C14.9185 6 14.6005 5.8683 14.3661 5.63388C14.1317 5.39946 14 5.08152 14 4.75C14 4.41848 14.1317 4.10054 14.3661 3.86612C14.6005 3.6317 14.9185 3.5 15.25 3.5ZM10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5ZM10 7C9.20435 7 8.44129 7.31607 7.87868 7.87868C7.31607 8.44129 7 9.20435 7 10C7 10.7956 7.31607 11.5587 7.87868 12.1213C8.44129 12.6839 9.20435 13 10 13C10.7956 13 11.5587 12.6839 12.1213 12.1213C12.6839 11.5587 13 10.7956 13 10C13 9.20435 12.6839 8.44129 12.1213 7.87868C11.5587 7.31607 10.7956 7 10 7Z" fill="currentColor"></path></svg>
+                      <span class="ftr__linkText">Instagram</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div class="col">
-            <div class="col-title">Connect</div>
-            <a class="link" *ngFor="let l of connectLinks" [href]="l.href">{{ l.label }}</a>
+          <!-- bottom -->
+          <div class="ftr__bottom">
+            <div class="ftr__credit">site design and development by jules studio.</div>
           </div>
         </div>
-      </div>
-
-      <div class="bottom">
-        <div class="credit">SITE DESIGN AND DEVELOPMENT BY JULES STUDIO.</div>
       </div>
     </div>
   </div>

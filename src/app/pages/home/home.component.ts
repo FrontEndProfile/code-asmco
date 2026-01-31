@@ -87,7 +87,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
 
   private initScrollReveals(gsap: any): void {
     const singleTargets = gsap.utils.toArray(
-      '.why .chip, .why .title, .work .title, .clients .headline, .help .heading, .help .media-frame, .t .chip, .t .quote, .t .by, .t .bottom, .ww .chip, .wb .chip, .wb .title, .mf .chip, .mf .title, .mf .body, .faq-title, .audit .kicker, .audit .title, .audit .pill'
+      '.why .why__eyebrow-text, .why .why__title, .work .title, .clients .headline, .help .heading, .help .media-frame, .t .chip, .t .quote, .t .by, .t .bottom, .ww .chip, .wb .chip, .wb .title, .mf .chip, .mf .title, .mf .body, .faq-title, .audit .kicker, .audit .title, .audit .pill'
     ) as HTMLElement[];
 
     singleTargets.forEach((el: HTMLElement) => {

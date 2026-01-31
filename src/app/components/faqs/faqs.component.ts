@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 
-type Faq = {
-  q: string;
-  a: string;
-};
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-faqs',
@@ -13,31 +16,58 @@ type Faq = {
   templateUrl: './faqs.component.html',
   styleUrl: './faqs.component.scss',
 })
-export class FaqsComponent {
-  faqs: Faq[] = [
+export class FaqsComponent implements AfterViewInit {
+  faqs = [
     {
       q: 'What tools / platforms do you use?',
-      a: 'We typically design in Figma and ship production-ready UI. For builds we use modern stacks depending on your needs (e.g., Angular/React/Next). For content we can support CMS setups as well.',
+      a: 'I design primarily with Figma, but also use a range of other tools as needed. For CMS platforms, on e-commerce projects I prefer Shopify. For other projects, I use Wordpress or Webflow.',
     },
     {
       q: 'Do you accept payment plans?',
-      a: 'Yes. For larger projects we can split payments into milestones (e.g., 50/25/25) depending on scope and timeline.',
+      a: 'Yes! Design is an investment, and I am happy to offer payment plans to allow you to pay comfortably.',
     },
     {
       q: 'What is your price range?',
-      a: 'It depends on complexity, pages, integrations, and timeline. After a short call, we share a clear fixed quote and deliverables.',
+      a: 'Keeping costs reasonable for clients is a priority. My rates vary depending on the needs of the project. That said, my most basic package starts at $600.',
     },
     {
       q: 'I need design and development, do you do both?',
-      a: 'Yes. We can handle full UI/UX + development, or work with your existing dev team and just provide design systems and screens.',
+      a: 'Yes! I work with talented and dedicated developers to bring my client’s vision to life. If you can think it, we can design and develop it.',
     },
   ];
 
-  openIndex: number | null = 0; // first open (set null if you want all closed)
+  openIndex: number | null = 0; // first open like screenshot
 
-  toggle(i: number) {
-    this.openIndex = this.openIndex === i ? null : i;
+  @ViewChildren('panels') panels!: QueryList<ElementRef<HTMLElement>>;
+
+  ngAfterViewInit() {
+    // set initial states
+    queueMicrotask(() => {
+      this.panels.forEach((ref, i) => {
+        gsap.set(ref.nativeElement, { height: i === this.openIndex ? 'auto' : 0 });
+      });
+    });
   }
 
-  trackByIndex = (i: number) => i;
+  toggle(i: number) {
+    const prev = this.openIndex;
+    this.openIndex = prev === i ? null : i;
+
+    // close previous
+    if (prev !== null && prev !== this.openIndex) {
+      const prevEl = this.panels.get(prev)?.nativeElement;
+      if (prevEl) {
+        gsap.to(prevEl, { height: 0, duration: 0.35, ease: 'power2.out' });
+      }
+    }
+
+    // open current
+    if (this.openIndex !== null) {
+      const el = this.panels.get(this.openIndex)?.nativeElement;
+      if (!el) return;
+
+      // if currently at 0 height, animate to auto
+      gsap.to(el, { height: 'auto', duration: 0.45, ease: 'power2.out' });
+    }
+  }
 }

@@ -1,50 +1,136 @@
-<section class="work" id="work">
-  <div class="container">
-    <div class="work-card">
-      <h2 class="title">Selected work<span class="dots">...</span></h2>
+<section class="sw-wrap" id="work">
+  <div class="sw-container">
+    <div class="sw-surface">
+      <div class="sw-inner">
+        <h2 class="sw-title">Selected work...</h2>
 
-      <div class="grid">
-        <!-- Card 1 -->
-        <a href="#" class="item large">
-          <img
-            src="assets/work/work-1.jpg"
-            alt="Horizon project"
-            loading="lazy"
-            decoding="async"
-          />
-          <span class="label">HORIZON</span>
-        </a>
+        <div class="sw-flex">
 
-        <!-- Card 2 -->
-        <a href="#" class="item tall">
-          <img
-            src="assets/work/work-2.jpg"
-            alt="Mobile app design"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
+          <!-- 1 : WIDE (7/12) -->
+          <div class="sw-item sw-item--7">
+            <article #revealEl class="sw-card sw-card--wide" [style.--delay]="'0ms'">
+              <img class="sw-img sw-img--contain"
+                   src="https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/690f29c2bea50a9f38cb1447_portfolio%20card%20image-1.png"
+                   alt="Horizon Interiors" />
 
-        <!-- Card 3 -->
-        <a href="#" class="item wide">
-          <img
-            src="assets/work/work-3.jpg"
-            alt="Web platform"
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
+              <!-- Desktop hover overlay -->
+              <div class="sw-overlay">
+                <div class="sw-tags">
+                  <span class="sw-tag" style="--d:0ms">Web design</span>
+                  <span class="sw-tag" style="--d:80ms">Branding</span>
+                  <span class="sw-tag" style="--d:160ms">Socials</span>
+                </div>
+                <h3 class="sw-cardTitle">Horizon Interiors</h3>
+              </div>
 
-        <!-- Card 4 -->
-        <a href="#" class="item wide dark">
-          <img
-            src="assets/work/work-4.jpg"
-            alt="Urban Wheels branding"
-            loading="lazy"
-            decoding="async"
-          />
-          <span class="label light">URBAN WHEELS</span>
-        </a>
+              <!-- Mobile meta (no hover) -->
+              <div class="sw-mobileMeta">
+                <div class="sw-tagsMobile">
+                  <span class="sw-pill">Web design</span>
+                  <span class="sw-pill">Branding</span>
+                  <span class="sw-pill">Socials</span>
+                </div>
+                <h3 class="sw-titleMobile">Horizon Interiors</h3>
+                <div class="sw-divider"></div>
+              </div>
+
+              <a class="sw-link" routerLink="/work/horizon-interiors" aria-label="Open Horizon Interiors"></a>
+            </article>
+          </div>
+
+          <!-- 2 : TALL (5/12) -->
+          <div class="sw-item sw-item--5">
+            <article #revealEl class="sw-card sw-card--tall" [style.--delay]="'120ms'">
+              <img class="sw-img sw-img--cover"
+                   src="https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/690f29c45894ecf58ab5ac85_portfolio%20card%20image-3.avif"
+                   alt="Adriano" />
+
+              <div class="sw-overlay">
+                <div class="sw-tags">
+                  <span class="sw-tag" style="--d:0ms">Web design</span>
+                  <span class="sw-tag" style="--d:80ms">UX research</span>
+                  <span class="sw-tag" style="--d:160ms">E-commerce</span>
+                </div>
+                <h3 class="sw-cardTitle">Adriano</h3>
+              </div>
+
+              <div class="sw-mobileMeta">
+                <div class="sw-tagsMobile">
+                  <span class="sw-pill">Web design</span>
+                  <span class="sw-pill">UX research</span>
+                  <span class="sw-pill">E-commerce</span>
+                </div>
+                <h3 class="sw-titleMobile">Adriano</h3>
+                <div class="sw-divider"></div>
+              </div>
+
+              <a class="sw-link" routerLink="/work/adriano" aria-label="Open Adriano"></a>
+            </article>
+          </div>
+
+          <!-- 3 : TALL (5/12) -->
+          <div class="sw-item sw-item--5">
+            <article #revealEl class="sw-card sw-card--tall" [style.--delay]="'240ms'">
+              <img class="sw-img sw-img--cover"
+                   src="https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/690f29c372e20ce6a58bcc34_portfolio%20card%20image-2.avif"
+                   alt="Conservation Montgomery" />
+
+              <div class="sw-overlay">
+                <div class="sw-tags">
+                  <span class="sw-tag" style="--d:0ms">Non-profit</span>
+                  <span class="sw-tag" style="--d:80ms">Web design</span>
+                  <span class="sw-tag" style="--d:160ms">UX research</span>
+                  <span class="sw-tag" style="--d:240ms">Branding update</span>
+                </div>
+                <h3 class="sw-cardTitle">Conservation Montgomery</h3>
+              </div>
+
+              <div class="sw-mobileMeta">
+                <div class="sw-tagsMobile">
+                  <span class="sw-pill">Non-profit</span>
+                  <span class="sw-pill">Web design</span>
+                  <span class="sw-pill">UX research</span>
+                  <span class="sw-pill">Branding update</span>
+                </div>
+                <h3 class="sw-titleMobile">Conservation Montgomery</h3>
+                <div class="sw-divider"></div>
+              </div>
+
+              <a class="sw-link" routerLink="/work/conservation-montgomery" aria-label="Open Conservation Montgomery"></a>
+            </article>
+          </div>
+
+          <!-- 4 : WIDE (7/12) -->
+          <div class="sw-item sw-item--7">
+            <article #revealEl class="sw-card sw-card--wide" [style.--delay]="'360ms'">
+              <img class="sw-img sw-img--contain"
+                   src="https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/690f29c40cc6cca6feb9808a_portfolio%20card%20image.avif"
+                   alt="Urban Wheels" />
+
+              <div class="sw-overlay">
+                <div class="sw-tags">
+                  <span class="sw-tag" style="--d:0ms">Small business</span>
+                  <span class="sw-tag" style="--d:80ms">Web design</span>
+                  <span class="sw-tag" style="--d:160ms">Branding</span>
+                </div>
+                <h3 class="sw-cardTitle">Urban Wheels</h3>
+              </div>
+
+              <div class="sw-mobileMeta">
+                <div class="sw-tagsMobile">
+                  <span class="sw-pill">Small business</span>
+                  <span class="sw-pill">Web design</span>
+                  <span class="sw-pill">Branding</span>
+                </div>
+                <h3 class="sw-titleMobile">Urban Wheels</h3>
+                <div class="sw-divider"></div>
+              </div>
+
+              <a class="sw-link" routerLink="/work/urban-wheels" aria-label="Open Urban Wheels"></a>
+            </article>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>

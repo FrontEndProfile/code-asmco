@@ -1,118 +1,157 @@
-.help {
-  padding: 22px 0 30px;
+/* ===== Wrapper system (same as your other sections) ===== */
+.hy-wrap {
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
-.help-card {
-  border-radius: 26px;
-  background: rgba(245, 245, 245, 0.92);
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-  padding: 54px 54px;
+.hy-container {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.help-grid {
+.hy-surface {
+  border-radius: 16px;
+  background: #f5f4f4;
+  overflow: hidden;
+}
+
+.hy-inner {
+  padding: 80px 64px;
+}
+
+/* ===== 2-col layout ===== */
+.hy-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 42px;
+  grid-template-columns: 1fr 0.8fr; /* Jules feel: left wider */
+  gap: 64px;
   align-items: center;
 }
 
-.heading {
-  margin: 0 0 34px;
-  line-height: 0.95;
+/* ===== Heading (Libre Caslon) ===== */
+.hy-heading {
+  margin: 0 0 28px;
+  font-family: "Libre Caslon Text", Georgia, serif;
+  font-size: 56px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #2e2c25;
 
-  font-size: clamp(2.4rem, 4vw, 4.8rem);
-  letter-spacing: -0.02em;
-  color: rgba(20, 20, 20, 0.92);
-  font-family: inherit;
-  font-weight: 500;
+  /* Jules: balanced wrap */
+  text-wrap: balance;
 }
 
-.heading em {
+.hy-heading em {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-.dots {
-  opacity: 0.6;
+.hy-dots {
+  opacity: 0.65;
 }
 
-/* list rows */
-.list {
+/* ===== List ===== */
+.hy-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
-.row {
+.hy-li {
+  margin: 0;
+  padding: 0;
+}
+
+/* rows are full-width clickable */
+.hy-row {
   all: unset;
+  display: block;
+  width: 100%;
   cursor: pointer;
 
-  display: block;
-  padding: 18px 0 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 
-  border-bottom: 1px solid rgba(20, 20, 20, 0.18);
+  transition: opacity 0.25s ease, border-color 0.25s ease;
 }
 
-.row:first-child {
-  border-top: 1px solid rgba(20, 20, 20, 0.18);
+.hy-li:first-child .hy-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
 }
 
-.row-main {
-  display: grid;
-  gap: 8px;
+/* Title/Subtitle use Geist-ish */
+.hy-rowTitle {
+  font-family: Geist, Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: rgba(46, 44, 37, 0.42);
+
+  transition: color 0.25s ease;
 }
 
-.row-title {
-  font-size: 1.55rem;
-  color: rgba(20, 20, 20, 0.55);
-  font-weight: 500;
+.hy-rowSub {
+  margin-top: 8px;
+  font-family: Geist, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.45);
 
-  transition: color 0.18s ease, transform 0.18s ease;
+  transition: color 0.25s ease;
 }
 
-.row-sub {
-  font-size: 1rem;
-  color: rgba(20, 20, 20, 0.42);
-  line-height: 1.5;
-
-  transition: color 0.18s ease;
+/* Active (Jules: darker title + subtle emphasis) */
+.hy-row.is-active .hy-rowTitle {
+  color: rgba(46, 44, 37, 0.95);
 }
 
-/* active/hover feel like screenshot */
-.row:hover .row-title,
-.row.is-active .row-title {
-  color: rgba(20, 20, 20, 0.9);
-  transform: translateX(2px);
+.hy-row.is-active .hy-rowSub {
+  color: rgba(0, 0, 0, 0.60);
 }
 
-.row:hover .row-sub,
-.row.is-active .row-sub {
-  color: rgba(20, 20, 20, 0.62);
+/* Desktop hover: same as active */
+@media (hover: hover) and (pointer: fine) {
+  .hy-row:hover .hy-rowTitle {
+    color: rgba(46, 44, 37, 0.95);
+  }
+  .hy-row:hover .hy-rowSub {
+    color: rgba(0, 0, 0, 0.60);
+  }
 }
 
-/* accessibility focus */
-.row:focus-visible {
-  outline: 2px solid rgba(0, 0, 0, 0.35);
-  outline-offset: 6px;
-  border-radius: 10px;
+/* Focus */
+.hy-row:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.25);
+  outline-offset: 8px;
+  border-radius: 12px;
 }
 
-/* right image area */
-.media-frame {
+/* ===== Right media frame (Jules: rounded, clean, not heavy black) ===== */
+.hy-mediaFrame {
   position: relative;
-  border-radius: 22px;
+  border-radius: 16px;
   overflow: hidden;
 
-  background: #111;
-  min-height: 420px;
+  /* Jules style: no “big black card”, just a subtle frame */
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.10);
 
-  border: 1px solid rgba(20, 20, 20, 0.12);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  /* This aspect ratio is what makes it look “right” */
+  aspect-ratio: 5.14 / 5.57;
+
+  /* subtle lift */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* stack all images and crossfade */
-.media-img {
+/* stack and fade */
+.hy-img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -121,47 +160,33 @@
   object-position: center;
 
   opacity: 0;
-  transform: scale(1.03);
-  filter: saturate(0.95) contrast(1.02);
-
-  transition: opacity 0.35s ease, transform 0.65s ease;
+  transition: opacity 0.35s ease;
 }
 
-.media-img.is-active {
+.hy-img.is-active {
   opacity: 1;
-  transform: scale(1);
 }
 
-/* responsive */
-@media (max-width: 1024px) {
-  .help-card {
-    padding: 44px 34px;
-  }
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .hy-wrap { padding: 0 16px; }
+  .hy-inner { padding: 48px 16px; }
 
-  .help-grid {
+  .hy-grid {
+    grid-template-columns: 1fr;
     gap: 28px;
   }
 
-  .row-title {
-    font-size: 1.35rem;
-  }
-}
-
-@media (max-width: 860px) {
-  .help-card {
-    padding: 28px 18px;
+  .hy-heading {
+    font-size: 44px;
+    margin-bottom: 18px;
   }
 
-  .help-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
+  .hy-rowTitle { font-size: 22px; }
+  .hy-rowSub { font-size: 14px; }
 
-  .media-frame {
-    min-height: 320px;
-  }
-
-  .heading {
-    margin-bottom: 22px;
+  .hy-mediaFrame {
+    /* still looks like Jules on mobile */
+    border-radius: 16px;
   }
 }

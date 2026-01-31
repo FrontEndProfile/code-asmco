@@ -1,137 +1,264 @@
-.work {
-  padding: 22px 0 30px;
+/* ====== Wrappers ====== */
+.sw-wrap {
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
-.work-card {
-  border-radius: 26px;
-  background: rgba(245, 245, 245, 0.92);
-  backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-  padding: 48px 48px 56px;
+.sw-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.title {
-  margin: 0 0 28px;
+.sw-surface {
+  border-radius: 16px;
+  background: #f5f4f4;
+  overflow: hidden;
+}
+
+.sw-inner {
+  padding: 80px 64px;
+}
+
+.sw-title {
+  margin: 0 0 48px;
   text-align: center;
-
-  font-size: clamp(2.2rem, 3.6vw, 4rem);
-  letter-spacing: -0.02em;
-  color: rgba(20, 20, 20, 0.92);
-
-  font-family: inherit;
-  font-weight: 500;
+  font-family: "Libre Caslon Text", Georgia, serif;
+  font-size: 56px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #2e2c25;
 }
 
-.dots {
-  opacity: 0.6;
+/* ====== FLEX LAYOUT (no grid) ======
+   Row-1: 7/12 + 5/12
+   Row-2: 5/12 + 7/12
+*/
+.sw-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
-/* Grid layout */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-
-/* Base card */
-.item {
+.sw-item {
   position: relative;
-  display: block;
+  min-width: 0;
+}
+
+.sw-item--7 {
+  flex: 0 0 calc((100% - 24px) * 7 / 12);
+}
+
+.sw-item--5 {
+  flex: 0 0 calc((100% - 24px) * 5 / 12);
+}
+
+/* ====== Cards ====== */
+.sw-card {
+  position: relative;
+  border-radius: 16px;
+  background: #ebe9df;
   overflow: hidden;
 
-  border-radius: 22px;
-  background: #eaeaea;
-
-  border: 1px solid rgba(20, 20, 20, 0.1);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* reveal (in-view) */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: var(--delay, 0ms);
 }
 
-.item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.18);
+.sw-card.is-inview {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Wide & Tall sizing */
+.sw-card--wide {
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sw-card--tall {
+  min-height: 430px;
   display: block;
 }
 
-/* Sizes (asymmetric like screenshot) */
-.item.large {
-  min-height: 320px;
+/* Images */
+.sw-img {
+  display: block;
+  max-width: 100%;
 }
 
-.item.tall {
-  min-height: 420px;
+.sw-img--contain {
+  width: 80%;
+  height: 334px;
+  object-fit: contain;
 }
 
-.item.wide {
-  min-height: 300px;
+.sw-img--cover {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
 }
 
-/* Overlay label */
-.label {
+/* ====== Desktop Hover Overlay (only for hover devices) ====== */
+.sw-overlay {
   position: absolute;
-  left: 22px;
-  bottom: 22px;
+  inset: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
 
-  color: rgba(255, 255, 255, 0.9);
+.sw-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sw-tag {
+  font-family: "Fira Code", monospace;
+  font-size: 12px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  color: #ebe9df;
 
-  font-family: inherit;
-  pointer-events: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #ebe9df;
+  background: rgba(255, 255, 255, 0.2);
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 350ms ease, transform 350ms ease;
+  transition-delay: var(--d, 0ms);
 }
 
-.label.light {
-  color: rgba(255, 255, 255, 0.95);
+.sw-cardTitle {
+  margin: 0;
+  font-family: "Libre Caslon Text", Georgia, serif;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .work-card {
-    padding: 40px 30px 44px;
-  }
-
-  .label {
-    font-size: 2.4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .item.large,
-  .item.tall,
-  .item.wide {
-    min-height: 260px;
-  }
-
-  .label {
-    font-size: 2rem;
+/* enable hover only where hover exists */
+@media (hover: hover) and (pointer: fine) {
+  .sw-card:hover .sw-overlay { opacity: 1; }
+  .sw-card:hover .sw-tag {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 480px) {
-  .work-card {
-    padding: 28px 18px 32px;
+/* ====== Mobile Meta (Jules mobile style) ====== */
+.sw-mobileMeta {
+  display: none; /* desktop off */
+  padding: 20px 0 0;
+  background: transparent;
+}
+
+.sw-tagsMobile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.sw-pill {
+  font-family: "Fira Code", monospace;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #2e2c25;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(46, 44, 37, 0.25);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.sw-titleMobile {
+  margin: 14px 0 0;
+  padding: 0 20px;
+  font-family: "Libre Caslon Text", Georgia, serif;
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #2e2c25;
+}
+
+.sw-divider {
+  height: 1px;
+  margin: 18px 20px 0;
+  background: rgba(46, 44, 37, 0.15);
+}
+
+/* Clickable link */
+.sw-link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  text-decoration: none;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 991px) {
+  .sw-wrap { padding: 0 16px; }
+
+  .sw-inner { padding: 40px 16px; }
+
+  .sw-title {
+    font-size: 44px;
+    margin-bottom: 32px;
   }
 
-  .label {
-    left: 16px;
-    bottom: 16px;
-    font-size: 1.8rem;
+  .sw-flex { flex-direction: column; }
+
+  .sw-item--7,
+  .sw-item--5 {
+    flex: 0 0 100%;
   }
+
+  .sw-card--wide,
+  .sw-card--tall {
+    display: block;
+    min-height: auto;
+    padding: 0;
+    background: transparent; /* Jules mobile looks like plain content */
+  }
+
+  /* image becomes the “card” */
+  .sw-img--contain {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .sw-img--cover {
+    height: 420px;
+    border-radius: 16px;
+  }
+
+  /* MOBILE: kill hover overlay */
+  .sw-overlay { display: none; }
+
+  /* MOBILE: show meta below image */
+  .sw-mobileMeta { display: block; }
 }

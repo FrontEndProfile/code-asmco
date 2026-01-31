@@ -1,45 +1,48 @@
-<section class="help" id="services" aria-label="How I can help you">
-  <div class="container">
-    <div class="help-card">
-      <div class="help-grid">
-        <!-- LEFT -->
-        <div class="copy">
-          <h2 class="heading">
-            How I <em>can help you</em><span class="dots">...</span>
-          </h2>
+<section class="hy-wrap" id="services" aria-label="How I can help you">
+  <div class="hy-container">
+    <div class="hy-surface">
+      <div class="hy-inner">
 
-          <div class="list" role="list">
-            <button
-              *ngFor="let item of items; let i = index"
-              type="button"
-              class="row"
-              [class.is-active]="i === activeIndex"
-              (mouseenter)="setActive(i)"
-              (focus)="setActive(i)"
-              (click)="setActive(i)"
-            >
-              <div class="row-main">
-                <div class="row-title">{{ item.title }}</div>
-                <div class="row-sub">{{ item.subtitle }}</div>
-              </div>
-            </button>
+        <div class="hy-grid">
+          <!-- LEFT -->
+          <div class="hy-copy">
+            <h2 class="hy-heading">
+              How I <em>can help you</em><span class="hy-dots">...</span>
+            </h2>
+
+            <ul class="hy-list" role="list">
+              <li *ngFor="let item of items; let i = index" class="hy-li">
+                <button
+                  type="button"
+                  class="hy-row"
+                  [class.is-active]="i === activeIndex"
+                  (mouseenter)="setActive(i)"
+                  (focus)="setActive(i)"
+                  (click)="setActive(i)"
+                >
+                  <div class="hy-rowTitle">{{ item.title }}</div>
+                  <div class="hy-rowSub">{{ item.subtitle }}</div>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="hy-media" aria-label="Service preview image">
+            <div class="hy-mediaFrame">
+              <img
+                *ngFor="let item of items; let i = index"
+                class="hy-img"
+                [class.is-active]="i === activeIndex"
+                [src]="item.image"
+                [alt]="item.title"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
         </div>
 
-        <!-- RIGHT -->
-        <div class="media" aria-label="Service preview image">
-          <div class="media-frame">
-            <img
-              *ngFor="let item of items; let i = index"
-              class="media-img"
-              [class.is-active]="i === activeIndex"
-              [src]="item.image"
-              [alt]="item.title"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
       </div>
     </div>
   </div>

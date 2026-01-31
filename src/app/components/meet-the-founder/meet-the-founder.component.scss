@@ -1,131 +1,130 @@
-.mf {
-  padding: 22px 0 30px;
-}
+.mtf {
+  padding-inline: 40px;
 
-.mf-card {
-  border-radius: 26px;
-  overflow: hidden;
-
-  background: rgba(245, 245, 245, 0.92);
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  min-height: 520px;
-}
-
-/* LEFT PANEL */
-.mf-left {
-  background: #262626;
-  color: rgba(255, 255, 255, 0.86);
-  padding: 54px 54px 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* CHIP */
-.chip {
-  width: fit-content;
-  margin: 0 0 22px;
-
-  padding: 10px 16px;
-  border-radius: 10px;
-
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(0, 0, 0, 0.18);
-
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-}
-
-/* HEADLINE */
-.title {
-  margin: 0 0 22px;
-  font-family: inherit;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-
-  font-size: clamp(2.2rem, 3.2vw, 3.4rem);
-  color: rgba(255, 255, 255, 0.94);
-}
-
-/* BODY */
-.body {
-  margin: 0;
-  max-width: 58ch;
-
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* RIGHT IMAGE */
-.mf-right {
-  background: transparent;
-  padding: 0;
-  display: grid;
-  place-items: stretch;
-}
-
-.img-frame {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  border-top-right-radius: 26px;
-  border-bottom-right-radius: 26px;
-}
-
-.img-frame img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* RESPONSIVE */
-@media (max-width: 980px) {
-  .mf-left {
-    padding: 44px 28px 42px;
+  &__container {
+    max-width: 1360px;
+    margin-inline: auto;
+    width: 100%;
   }
 
-  .mf-card {
-    grid-template-columns: 1fr;
-    min-height: auto;
+  &__card {
+    border-radius: 16px;
+    background: rgb(21, 20, 16);
+    overflow: hidden;
   }
 
-  .img-frame {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr; // close to 755/604 ratio
+    align-items: stretch;
   }
 
-  .mf-right {
-    order: -1; /* image first on mobile like many modern layouts */
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 106px 128px 106px 56px;
+    gap: 16px;
   }
 
-  .img-frame {
-    height: 320px;
-  }
-}
+  &__eyebrow {
+    border: 0.555556px solid rgb(235, 233, 223);
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
 
-@media (max-width: 520px) {
-  .mf-left {
-    padding: 28px 18px 26px;
+    span {
+      font-family: "Fira Code", Arial, sans-serif;
+      color: rgb(235, 233, 223);
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      line-height: 12px;
+      white-space: nowrap;
+    }
   }
 
-  .img-frame {
-    height: 260px;
+  &__title {
+    margin: 0;
+    font-family: "Libre Caslon Text", Georgia, serif;
+    color: rgb(235, 233, 223);
+    font-size: 38px;
+    line-height: 45.6px;
+    font-weight: 400;
+    letter-spacing: -1.9px;
+    max-width: 40ch;
   }
 
-  .body {
-    font-size: 1rem;
+  &__desc {
+    margin: 0;
+    font-family: Geist, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22.4px;
+    font-weight: 400;
+    letter-spacing: -0.16px;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 60ch;
   }
+
+  &__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    // right side needs full height
+    min-height: 520px;
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.01);
+  }
+
+  // ✅ responsive
+  @media (max-width: 1024px) {
+    padding-inline: 20px;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    // ✅ IMAGE TOP on mobile
+    &__media {
+      order: -1; // <-- move image above content
+      border-radius: 0;
+      min-height: unset; // remove old min height
+      aspect-ratio: 16 / 9; // or 4 / 3 (pick what matches best)
+      width: 100%;
+    }
+
+    &__img {
+      position: absolute; // keep it covering
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.01);
+    }
+
+    &__content {
+      order: 1;
+      padding: 28px 24px 40px; // tighter like ref UI
+    }
+
+    // optional: make text nicer on small
+    &__title {
+      font-size: 34px;
+      line-height: 40px;
+      max-width: none;
+    }
+
+    &__desc {
+      max-width: none;
+    }
+  }
+
 }

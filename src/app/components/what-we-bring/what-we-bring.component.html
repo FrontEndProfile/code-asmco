@@ -1,50 +1,43 @@
-<section class="wb" id="skills" aria-label="Skills and Services">
+<section class="wwb" #section>
   <div class="container">
-    <div class="wb-card">
-      <div class="wb-grid">
+    <div class="card">
+      <div class="inner-grid">
         <!-- LEFT IMAGE -->
-        <div class="media">
-          <div class="media-frame">
-            <img
-              [src]="imageUrl"
-              alt="Skills & services"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
+        <div class="image-wrap" #imageWrap>
+          <img
+            #imageEl
+            class="image"
+            src="https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/690c5716ce4e1092044fd72a_service%20image.avif"
+            alt="Person writing notes next to a laptop and coffee mug"
+            loading="lazy"
+          />
         </div>
 
         <!-- RIGHT CONTENT -->
         <div class="content">
-          <div class="chip">SKILLS &amp; SERVICES</div>
+          <div class="eyebrow">
+            <span>skills &amp; services</span>
+          </div>
 
-          <h2 class="title">
-            What we bring to the table<span class="dots">...</span>
-          </h2>
+          <h2 class="heading">What we bring to the table...</h2>
 
-          <div class="sections">
-            <!-- BLOCK 1 -->
-            <div class="row">
-              <h3 class="row-title">{{ blocks[0].title }}</h3>
+          <div class="blocks">
+            <ng-container *ngFor="let block of services; let idx = index">
+              <div class="row">
+                <h3 class="title">{{ block.title }}</h3>
 
-              <ul class="bullets">
-                <li *ngFor="let it of blocks[0].items">{{ it }}</li>
-              </ul>
-            </div>
+                <ul class="list">
+                  <li class="item" *ngFor="let it of block.items">
+                    <span class="dot"></span>
+                    <span class="text">{{ it }}</span>
+                  </li>
+                </ul>
+              </div>
 
-            <div class="divider" aria-hidden="true"></div>
-
-            <!-- BLOCK 2 -->
-            <div class="row">
-              <h3 class="row-title">{{ blocks[1].title }}</h3>
-
-              <ul class="bullets">
-                <li *ngFor="let it of blocks[1].items">{{ it }}</li>
-              </ul>
-            </div>
+              <div class="divider" *ngIf="idx < services.length - 1"></div>
+            </ng-container>
           </div>
         </div>
-        <!-- /content -->
       </div>
     </div>
   </div>

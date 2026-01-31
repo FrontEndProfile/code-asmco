@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
-type TagItem = { text: string; isDot?: boolean };
+type WorkTag = { label: string };
 
 @Component({
   selector: 'app-work-with-tags',
@@ -11,20 +11,27 @@ type TagItem = { text: string; isDot?: boolean };
   styleUrl: './work-with-tags.component.scss',
 })
 export class WorkWithTagsComponent {
-  activeIndex: number | null = null;
-
-  // exactly like screenshot: words + red dots between
-  items: TagItem[] = [
-    { text: 'Non-Profits' }, { text: '•', isDot: true },
-    { text: 'Small Businesses' }, { text: '•', isDot: true },
-    { text: 'Startups' }, { text: '•', isDot: true },
-    { text: 'Event Planners' }, { text: '•', isDot: true },
-    { text: 'Ecommerce Businesses' }, { text: '•', isDot: true },
-    { text: 'Agencies' }, { text: '•', isDot: true },
-    { text: 'Personal Brands' },
+  tags: WorkTag[] = [
+    { label: 'Non-Profits' },
+    { label: 'Small Businesses' },
+    { label: 'Startups' },
+    { label: 'Event Planners' },
+    { label: 'Ecommerce Businesses' },
+    { label: 'Agencies' },
+    { label: 'Personal Brands' },
   ];
 
-  setActive(i: number | null) {
-    this.activeIndex = i;
+  hoveredIndex: number | null = null;
+
+  onEnter(i: number) {
+    this.hoveredIndex = i;
+  }
+
+  onLeave() {
+    this.hoveredIndex = null;
+  }
+
+  isDim(i: number): boolean {
+    return this.hoveredIndex !== null && this.hoveredIndex !== i;
   }
 }

@@ -1,39 +1,43 @@
-<section class="faq" id="faq" aria-label="FAQs">
-  <div class="container">
-    <div class="faq-card">
-      <h2 class="faq-title">FAQs</h2>
+<section class="faqs">
+  <div class="faqs__container">
+    <div class="faqs__card">
+      <div class="faqs__inner">
+        <header class="faqs__head">
+          <h2 class="faqs__title"><em>FAQs</em></h2>
+        </header>
 
-      <div class="faq-list" role="list">
-        <div class="faq-item" *ngFor="let item of faqs; let i = index; trackBy: trackByIndex" role="listitem">
-          <button
-            class="faq-q"
-            type="button"
-            (click)="toggle(i)"
-            [attr.aria-expanded]="openIndex === i"
-            [attr.aria-controls]="'faq-panel-' + i"
-          >
-            <span class="q-text">{{ item.q }}</span>
+        <ul class="faqs__list">
+          <li class="faqs__item" *ngFor="let item of faqs; let i = index" [class.is-open]="openIndex === i">
+            <button
+              type="button"
+              class="faqs__trigger"
+              (click)="toggle(i)"
+              [attr.aria-expanded]="openIndex === i"
+              [attr.aria-controls]="'faq-panel-' + i"
+            >
+              <span class="faqs__q">{{ item.q }}</span>
 
-            <span class="icon" [class.is-open]="openIndex === i" aria-hidden="true">
-              <span class="bar h"></span>
-              <span class="bar v"></span>
-            </span>
-          </button>
+              <span class="faqs__icon" aria-hidden="true">
+                <span class="faqs__icon-v"></span>
+                <span class="faqs__icon-h"></span>
+              </span>
+            </button>
 
-          <div
-            class="faq-a"
-            [class.is-open]="openIndex === i"
-            [id]="'faq-panel-' + i"
-            role="region"
-            [attr.aria-label]="item.q"
-          >
-            <div class="faq-a-inner">
-              <p>{{ item.a }}</p>
+            <div
+              class="faqs__panel"
+              [id]="'faq-panel-' + i"
+              role="region"
+              [attr.aria-hidden]="openIndex !== i"
+              #panels
+            >
+              <div class="faqs__panel-inner">
+                <p class="faqs__a">{{ item.a }}</p>
+                <div class="faqs__spacer"></div>
+              </div>
             </div>
-          </div>
+          </li>
+        </ul>
 
-          <div class="divider" aria-hidden="true"></div>
-        </div>
       </div>
     </div>
   </div>

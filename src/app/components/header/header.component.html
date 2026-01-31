@@ -1,53 +1,78 @@
-<header class="site-header" [class.is-open]="isMenuOpen">
-  <div class="header-shell">
-    <div class="header-bar container">
-      <!-- Brand -->
-      <a class="brand" href="#home" data-scroll (click)="closeMenu()">
-        <img
-          class="brand-logo"
-          src="https://asmco.company/assets/images/asmco-Logo.svg"
-          alt="ASMCO Tech logo"
-          width="140"
-          height="40"
-          loading="eager"
-          decoding="async"
-        />
+
+
+
+<!-- overlay -->
+<div class="overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+
+<header class="nav-wrap">
+  <div class="nav-inner" #navInner>
+    <!-- Brand -->
+    <a class="brand" href="/" aria-label="Go to home page">
+      <img class="brand-logo" src="../../../assets/images/asmco-Logo.svg"alt="Logo" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="nav-desktop" aria-label="Primary navigation">
+      <a class="nav-link active" href="/">
+        <span class="dot"></span>
+        <span>Home</span>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="nav-links" aria-label="Primary">
-        <a class="nav-link is-active" href="#home" data-scroll>Home</a>
-        <a class="nav-link" href="#work" data-scroll>Work</a>
-      </nav>
+      <a class="nav-link" href="/#work">
+        <span class="dot ghost"></span>
+        <span>Work</span>
+      </a>
 
-      <!-- Actions -->
-      <div class="header-actions">
-        <a class="cta-pill" href="#contact" data-scroll>Get a Free Audit</a>
+      <a class="cta" href="/booking">
+        <span class="cta-text">Book a Free Call</span>
 
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Toggle menu"
-          [attr.aria-expanded]="isMenuOpen"
-          aria-controls="mobile-menu"
-          (click)="toggleMenu()"
+        <svg
+          class="cta-arrow"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
         >
-          <span class="line"></span>
-          <span class="line"></span>
-        </button>
-      </div>
-    </div>
+          <path
+            d="M20 12L4 12M20 12C20 10.682 15 7 15 7M20 12C20 13.318 15 17 15 17"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" *ngIf="isMenuOpen">
-      <nav class="drawer-links" id="mobile-menu" aria-label="Mobile">
-        <a class="drawer-link is-active" href="#home" data-scroll (click)="closeMenu()">Home</a>
-        <a class="drawer-link" href="#work" data-scroll (click)="closeMenu()">Work</a>
+    </nav>
 
-        <a class="cta-pill" href="#contact" data-scroll (click)="closeMenu()">
-          Get a Free Audit
-        </a>
-      </nav>
-    </div>
+    <!-- Hamburger -->
+    <button
+      #hamburger
+      type="button"
+      class="hamburger"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-label="Toggle menu"
+    >
+      <span #lineTop class="h-line"></span>
+      <span #lineMid class="h-line"></span>
+      <span #lineBot class="h-line"></span>
+    </button>
+
+    <!-- overlay -->
+    <div class="overlay" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+
+    <!-- mobile menu -->
+    <nav #mobileMenu class="nav-mobile" aria-label="Mobile navigation">
+      <a class="m-link" href="/" (click)="closeMenu()">Home</a>
+      <a class="m-link" href="/#work" (click)="closeMenu()">Work</a>
+
+      <a class="m-cta" href="/booking" (click)="closeMenu()">Book a Free Call</a>
+    </nav>
+
+
   </div>
 </header>
+
+<!-- Spacer for the old margin-bottom: 32px -->
+<div class="header-spacer"></div>

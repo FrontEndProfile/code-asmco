@@ -1,129 +1,260 @@
+/* =========================
+   Why Choose (pixel-safe refactor)
+   Desktop values match your original
+   ========================= */
+
+.why-wrap {
+  /* style-0 */
+  padding-inline: 40px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.why-wrap__container {
+  /* style-1 */
+  max-width: 1360px;
+  width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
 .why {
-  padding: 22px 0 28px;
+  /* style-2 */
+  border-radius: 16px;
+  background-color: rgb(245, 244, 244);
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.why-card {
-  border-radius: 26px;
-  background: rgba(245, 245, 245, 0.92);
-  backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(20, 20, 20, 0.08);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-
-  padding: 56px 56px 60px;
+.why__inner {
+  /* style-3 */
+  padding-block: 80px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.why-head {
+.why__pad {
+  /* style-4 */
+  padding-inline: 64px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.why__header {
+  /* style-6 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
-  margin-bottom: 34px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.chip {
-  width: fit-content;
-  margin: 0 auto 18px;
+.why__eyebrow {
+  /* style-7 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
 
-  padding: 10px 14px;
-  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10.08px 16px;
+  margin-bottom: 24px;
 
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
 
-  border: 1px solid rgba(20, 20, 20, 0.16);
-  color: rgba(20, 20, 20, 0.78);
-
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+.why__eyebrow-text {
+  /* style-8 */
+  font-family: "Fira code", Arial, sans-serif;
+  color: rgb(46, 44, 37);
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.05;
-
-  font-size: clamp(2.2rem, 3.6vw, 4rem);
-  letter-spacing: -0.02em;
-  color: rgba(20, 20, 20, 0.92);
-
-  font-family: inherit;
-  font-weight: 500;
+.why__title-wrap {
+  /* mimic your style-9 wrapper, without junk transforms */
+  max-width: 100rem;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.grid {
+.why__title {
+  /* style-11 */
+  margin: 0 0 48px; /* IMPORTANT: your original has no explicit margin here,
+                       but visually it separates from grid; keep a safe gap.
+                       If you already had gap via outside, set to 0 0 0 and use grid margin. */
+  font-family: "Libre caslon text", Georgia, sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 67.2px;
+  letter-spacing: -2.8px;
+  text-transform: none;
+  color: rgb(46, 44, 37);
+  text-wrap: wrap;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grid */
+.why__grid {
+  /* style-12 (DESKTOP EXACT) */
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
+  grid-template-columns: 394.664px 394.664px 394.664px;
+  grid-auto-columns: 1fr;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.item {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(20, 20, 20, 0.14);
-  border-radius: 18px;
-
-  padding: 26px 22px 24px;
+/* Card (shared) — style-13 / 23 / 33 */
+.why-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
+  gap: 24px;
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.item:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+.why-card__img {
+  /* style-14/24/34 */
+  height: 164.953px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  vertical-align: middle;
+  border: 0;
+  box-sizing: border-box;
 }
 
-.icon-wrap {
-  height: 110px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 14px;
+.why-card__body {
+  /* replaces style-15/25/35 wrappers */
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.icon {
-  max-width: 150px;
-  max-height: 110px;
-  width: auto;
-  height: auto;
-  opacity: 0.95;
+.why-card__title {
+  /* style-19/29/39 */
+  margin: 0 0 12px;
+  font-family: Geist, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 33.6px;
+  letter-spacing: -0.56px;
+  text-transform: none;
+  color: rgb(46, 44, 37);
+  text-wrap: wrap;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.item-title {
-  margin: 0 0 8px;
-  font-size: 1.28rem;
-  font-weight: 600;
-  color: rgba(20, 20, 20, 0.9);
+.why-card__text {
+  /* style-22/32/42 */
+  margin: 0;
+  font-family: Geist, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+  text-transform: none;
+  color: rgba(0, 0, 0, 0.6);
+  text-wrap: wrap;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-.item-desc {
-  margin: 0 auto;
-  max-width: 280px;
+/* =========================
+   Responsiveness (NO desktop change)
+   ========================= */
 
-  color: rgba(20, 20, 20, 0.62);
-  font-size: 0.98rem;
-  line-height: 1.6;
+/* <= 1244px: grid must stop overflowing */
+@media (max-width: 1244px) {
+  .why__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .why-card {
-    padding: 46px 34px 50px;
+/* Tablet */
+@media (max-width: 991.98px) {
+  .why-wrap {
+    padding-inline: 20px;
   }
 
-  .grid {
+  .why__pad {
+    padding-inline: 24px;
+  }
+
+  .why__inner {
+    padding-block: 64px;
+  }
+
+  .why__title {
+    margin-bottom: 40px;
+    font-size: 56px; /* keep same unless you want scale */
+    line-height: 67.2px;
+    letter-spacing: -2.8px;
+  }
+
+  .why__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 640px) {
-  .why-card {
-    padding: 28px 18px 30px;
+/* Mobile */
+@media (max-width: 575.98px) {
+  .why__inner {
+    padding-block: 48px;
   }
 
-  .grid {
+  .why__pad {
+    padding-inline: 18px;
+  }
+
+  .why__title {
+    margin-bottom: 28px;
+    font-size: 42px;
+    line-height: 48px;
+    letter-spacing: -2.1px;
+  }
+
+  .why__grid {
     grid-template-columns: 1fr;
   }
 
-  .item-desc {
-    max-width: 340px;
+  .why-card {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .why-card__img {
+    height: 140px;
+  }
+
+  .why-card__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .why-card__text {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
