@@ -95,14 +95,24 @@
 /* Dim behavior */
 .tag.dim {
   opacity: 0.35;
-  filter: blur(0.2px); /* optional; remove if you want pure dim only */
+  filter: blur(0.2px);
+  /* optional; remove if you want pure dim only */
   transform: translateY(0);
 }
 
 .dot {
   width: 0.63rem;
-  height: 0.63rem; /* make it circle */
+  height: 0.63rem;
+  /* make it circle */
   border-radius: 2000px;
   background: rgb(211, 69, 48);
   flex: 0 0 auto;
+}
+
+
+
+@media (max-width: 991.98px) {
+  .work-tags {
+    padding-inline: 20px;
+  }
 }

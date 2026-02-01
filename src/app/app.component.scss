@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.app-content {
+  transform: translateY(0);
+  opacity: 1;
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.08s,
+    opacity 0.35s ease 0.08s;
+}
+
+:host-context(.is-transitioning) .app-content {
+  transform: translateY(28px);
+  opacity: 0;
+  transition-delay: 0s, 0s;
+}
