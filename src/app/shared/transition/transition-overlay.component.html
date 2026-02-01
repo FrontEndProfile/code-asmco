@@ -1,0 +1,12 @@
+<div
+  #overlay
+  class="transition-overlay"
+  [class.is-visible]="state().visible"
+  aria-hidden="true"
+  role="presentation"
+>
+  <div class="transition-overlay__content">
+    <div class="transition-overlay__title">{{ title }}</div>
+    <div class="transition-overlay__subtitle" *ngIf="subtitle">{{ subtitle }}</div>
+  </div>
+</div>

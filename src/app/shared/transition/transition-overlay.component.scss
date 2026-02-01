@@ -1,0 +1,43 @@
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--transition-bg, #c33a2b);
+  color: var(--transition-fg, #ffffff);
+  transform: translateY(0);
+  pointer-events: auto;
+  will-change: transform, opacity;
+}
+
+.transition-overlay.is-visible {
+  display: flex;
+}
+
+.transition-overlay__content {
+  text-align: center;
+  display: grid;
+  gap: 12px;
+  padding: 16px 24px;
+}
+
+.transition-overlay__title {
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(28px, 4vw, 54px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+}
+
+.transition-overlay__subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  word-spacing: 2vw;
+}

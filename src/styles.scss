@@ -8,6 +8,13 @@ $primary-color: #282828;
 $light-color : #FBFBFB;
 $body-color: #E5E5E5;
 
+:root {
+  --transition-bg: #0e0e0e;
+  --transition-fg: #ffffff;
+  --transition-duration-exit: 650ms;
+  --transition-hold: 920ms;
+}
+
 // Global Container Style
 .container {
   margin: 0 auto;
@@ -23,6 +30,12 @@ body {
   font-family: $secondary-font;
   color: $primary-color;
   background-color: $body-color;
+  transition: opacity 0.35s ease;
+}
+
+body.is-transitioning {
+  overflow: hidden;
+  opacity: 0.92;
 }
 section {
   margin-bottom: 32px;
