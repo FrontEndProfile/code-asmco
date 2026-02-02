@@ -1,3 +1,5 @@
+@use '../../../styles/variables' as *;
+
 /* Outer spacing same style */
 .work-tags {
   padding-left: 40px;
@@ -105,7 +107,7 @@
   height: 0.63rem;
   /* make it circle */
   border-radius: 2000px;
-  background: rgb(211, 69, 48);
+  background: $gray-color;
   flex: 0 0 auto;
 }
 

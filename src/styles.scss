@@ -1,19 +1,4 @@
-// Global Font Styles
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Geist:wght@100..900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
-
-$primary-font: 'Libre Caslon Text', serif;
-$secondary-font: 'Geist', sans-serif;
-$monospace-font: 'Fira Code', monospace;
-$primary-color: #282828;
-$light-color : #FBFBFB;
-$body-color: #E5E5E5;
-
-:root {
-  --transition-bg: #0e0e0e;
-  --transition-fg: #ffffff;
-  --transition-duration-exit: 650ms;
-  --transition-hold: 920ms;
-}
+@use './styles/variables' as *;
 
 // Global Container Style
 .container {

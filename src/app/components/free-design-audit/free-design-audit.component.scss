@@ -55,6 +55,7 @@
     background-position: 50% 95%;
     background-size: contain;
     padding-bottom: 8px;
+    filter: brightness(0) saturate(100%) invert(8%) sepia(10%) saturate(7%) hue-rotate(332deg) brightness(100%) contrast(82%);
   }
 
   /* body */

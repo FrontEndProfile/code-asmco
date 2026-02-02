@@ -28,7 +28,7 @@ export class FaqsComponent implements AfterViewInit {
     },
     {
       q: 'What is your price range?',
-      a: 'Keeping costs reasonable for clients is a priority. My rates vary depending on the needs of the project. That said, my most basic package starts at $600.',
+      a: 'Keeping costs reasonable for clients is a priority. My rates vary depending on the needs of the project. That said, my most basic package starts at Rs-50k or $200.',
     },
     {
       q: 'I need design and development, do you do both?',

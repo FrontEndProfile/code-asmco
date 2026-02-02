@@ -1,3 +1,4 @@
+@use '../../../styles/variables' as *;
 .wwb {
   padding: 0 40px;
   box-sizing: border-box;
@@ -122,12 +123,12 @@
   width: 0.63rem;
   height: 0.63rem;
   border-radius: 999px;
-  background: rgb(211, 69, 48);
+  background: $primary-color;
   flex: 0 0 auto;
 }
 
 .text {
-  font-family: Geist, Arial, sans-serif;
+  font-family: $secondary-font;
   color: rgb(46, 44, 37);
   font-size: 20px;
   line-height: 28px;
