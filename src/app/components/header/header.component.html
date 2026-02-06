@@ -14,7 +14,7 @@
         <span>Home</span>
       </a>
 
-      <a class="nav-link" href="/#work">
+      <a class="nav-link" routerLink="/" fragment="work">
         <span class="dot ghost"></span>
         <span>Work</span>
       </a>
@@ -61,7 +61,7 @@
     <!-- mobile menu -->
     <nav #mobileMenu class="nav-mobile" aria-label="Mobile navigation">
       <a class="m-link" href="/" (click)="closeMenu()">Home</a>
-      <a class="m-link" href="/#work" (click)="closeMenu()">Work</a>
+      <a class="m-link" routerLink="/" fragment="work" (click)="closeMenu()">Work</a>
 
       <a class="m-cta" href="/booking" (click)="closeMenu()">Book a Free Call</a>
     </nav>
