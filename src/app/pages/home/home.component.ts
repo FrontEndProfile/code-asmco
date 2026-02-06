@@ -12,6 +12,7 @@ import { WhatWeBringComponent } from "../../components/what-we-bring/what-we-bri
 import { MeetTheFounderComponent } from "../../components/meet-the-founder/meet-the-founder.component";
 import { FaqsComponent } from "../../components/faqs/faqs.component";
 import { FreeDesignAuditComponent } from "../../components/free-design-audit/free-design-audit.component";
+import { LetsConnectComponent } from "../../components/lets-connect/lets-connect.component";
 
 @Component({
   selector: 'app-home',
