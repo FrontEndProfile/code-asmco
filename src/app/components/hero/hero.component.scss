@@ -131,6 +131,15 @@
   text-wrap: wrap;
 }
 
+.hero__desc-sub {
+  margin: 12px 0 0;
+  font-family: Geist, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
 /* (optional) glow from original dump */
 .hero__glow {
   z-index: -1;

@@ -1,5 +1,6 @@
 .fda {
   padding-inline: 40px;
+  scroll-margin-top: 104px;
 
   &__container {
     max-width: 1360px;
@@ -91,6 +92,37 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 108px;
+  }
+
+  &__service-area {
+    width: 100%;
+    border: 0.555556px solid rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 20px 24px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  &__service-title {
+    margin: 0 0 8px;
+    font-family: "Libre Caslon Text", Georgia, serif;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: rgb(46, 44, 37);
+  }
+
+  &__service-text,
+  &__service-note {
+    margin: 0;
+    font-family: Geist, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  &__service-note {
+    margin-top: 6px;
   }
 
   &__box {

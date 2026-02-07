@@ -37,7 +37,7 @@ export class WhatWeBringComponent  implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Brand Design',
-      items: ['Visual Design', 'Logos & Visual Identity', 'Social Media Graphics', 'Presentation Decks', 'Colors & Typography'],
+      items: ['Visual Design', 'Logos & Visual Identity', 'Social Media Graphics', 'Presentation Decks', 'Colors & Typography', 'Business Profiles'],
     },
   ];
 

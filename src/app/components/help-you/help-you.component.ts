@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 type HelpItem = {
   title: string;
   subtitle: string;
   image: string;
+  alt: string;
 };
 
 @Component({
   selector: 'app-help-you',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './help-you.component.html',
   styleUrl: './help-you.component.scss',
 })
@@ -23,18 +25,21 @@ export class HelpYouComponent {
       subtitle: 'E-commerce sites, marketing sites, and so much more',
       image:
         'https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/68f36a5a504a85f461e07738_service%20image-1.avif',
+      alt: 'Website design preview for business websites asmco',
     },
     {
       title: 'Elevating your Digital Presence',
       subtitle: 'Web + Socials to keep your brand consistent and polished',
       image:
         'https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/68f36a5b0df028e0769d555e_service%20image.avif',
+      alt: 'Web development service preview for client sites asmco',
     },
     {
       title: 'Branding Packages',
       subtitle: 'Clean, modern, consistent branding to enhance your organization’s visuals',
       image:
         'https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/68f36a5a9039ffc9b84e727d_service%20image-2.avif',
+      alt: 'SEO services growth visuals for businesses asmco',
     },
   ];
 

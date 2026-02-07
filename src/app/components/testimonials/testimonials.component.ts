@@ -24,7 +24,7 @@ export class TestimonialsComponent implements OnInit {
         '-Sara Mastro, VP, Operations and Product Management at Perceptronics Solutions, Inc',
       avatar:
         'https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/6929f88d658092862432b27e_client%20image-1.avif',
-      avatarAlt: 'Client photo',
+      avatarAlt: 'Client testimonial portrait for ASMCO services asmco',
     },
     {
       quoteHtml:
@@ -32,7 +32,7 @@ export class TestimonialsComponent implements OnInit {
       authorLine: '-Santiago Guzmán, CEO, Adriano',
       avatar:
         'https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/6929f88d8e9ff6a515c1a403_client%20image.avif',
-      avatarAlt: 'Client photo',
+      avatarAlt: 'Ecommerce client portrait for web projects asmco',
     },
     {
       quoteHtml:
@@ -40,7 +40,7 @@ export class TestimonialsComponent implements OnInit {
       authorLine: '-Helen Wood, Conservation Montgomery Board Member',
       avatar:
         'https://cdn.prod.website-files.com/68f32de327233c470b1e6a87/6929f88dfda9ac362e189272_client%20image-2.avif',
-      avatarAlt: 'Client photo',
+      avatarAlt: 'Nonprofit client portrait for ASMCO work asmco',
     },
   ];
 

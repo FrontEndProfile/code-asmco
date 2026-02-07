@@ -20,11 +20,17 @@
                   (focus)="setActive(i)"
                   (click)="setActive(i)"
                 >
-                  <div class="hy-rowTitle">{{ item.title }}</div>
+                  <h3 class="hy-rowTitle">{{ item.title }}</h3>
                   <div class="hy-rowSub">{{ item.subtitle }}</div>
                 </button>
               </li>
             </ul>
+
+            <p class="hy-linkline">
+              <a class="hy-link" routerLink="/" fragment="service-area">Serving Businesses Nationwide</a>
+              ·
+              <a class="hy-link" routerLink="/" fragment="contact">Contact us</a>
+            </p>
           </div>
 
           <!-- RIGHT -->
@@ -35,7 +41,7 @@
                 class="hy-img"
                 [class.is-active]="i === activeIndex"
                 [src]="item.image"
-                [alt]="item.title"
+                [alt]="item.alt"
                 loading="lazy"
                 decoding="async"
               />
